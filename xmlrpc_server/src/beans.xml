@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- 这个name是XMLRPC Client调用的handler -->
+	<bean name="common.GoodHandler" class="server.business.GoodHandlerImpl" />
+	<bean name="common.HelloHandler" class="server.business.HelloHandlerImpl" />
+
+	<!--初始化RequestProcessorFactoryFactory, PropertyHandlerMapping, CustomAuthenticationHandler-->
+	<bean name="customRequestProcessorFactoryFactory" class="server.core.CustomRequestProcessorFactoryFactory" />
+	<bean name="propertyHandlerMapping" class="org.apache.xmlrpc.server.PropertyHandlerMapping" />
+	<bean name="customAuthenticationHandler" class="server.core.CustomAuthenticationHandler" />
+
+</beans>
